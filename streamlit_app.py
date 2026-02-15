@@ -311,6 +311,12 @@ def main():
         return
 
     df = pd.read_csv(uploaded)
+    
+    # Apply the same TotalCharges preprocessing as in training
+    if "TotalCharges" in df.columns:
+        tc = df["TotalCharges"].astype(str).str.strip().replace({"": np.nan})
+        df["TotalCharges"] = pd.to_numeric(tc, errors="coerce")
+    
     st.subheader("Preview")
     st.dataframe(df.head(10), use_container_width=True)
 
