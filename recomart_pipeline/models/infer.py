@@ -56,6 +56,18 @@ def recommend(user_id: str, k: int = 10, strategy: str = "hybrid") -> list:
     return merged[:k]
 
 
+def recommend_collaborative_detailed(user_id: str, k: int = 10) -> list:
+    """Returns [(product_id, predicted_rating_score), ...] for the Streamlit app."""
+    _load()
+    return _cf_recommend(user_id, k, with_scores=True)
+
+
+def recommend_content_detailed(user_id: str, k: int = 10) -> list:
+    """Returns [(product_id, similarity_score, because_of_product_id), ...]."""
+    _load()
+    return _cb_recommend(user_id, k, with_scores=True)
+
+
 if __name__ == "__main__":
     import argparse
 

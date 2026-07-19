@@ -55,7 +55,7 @@ def make_recommend_fn(model: dict):
 
     factors = sigma[:, None] * Vt  # (k, n_items)
 
-    def recommend(user_id: str, k: int = 10) -> list:
+    def recommend(user_id: str, k: int = 10, with_scores: bool = False):
         if user_id not in user_to_idx:
             return []
         uidx = user_to_idx[user_id]
@@ -65,6 +65,8 @@ def make_recommend_fn(model: dict):
                 scores[item_to_idx[item_id]] = -np.inf
         top_idx = np.argpartition(-scores, min(k, len(scores) - 1))[:k]
         top_idx = top_idx[np.argsort(-scores[top_idx])]
+        if with_scores:
+            return [(idx_to_item[i], float(scores[i])) for i in top_idx]
         return [idx_to_item[i] for i in top_idx]
 
     return recommend

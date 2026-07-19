@@ -113,8 +113,16 @@ Full discussion in `03_model_performance_report.md`. EDA plots:
 `02_data_quality_report.md`. DVC pipeline DAG and Prefect flow execution log
 are reproducible via the commands in the top-level `README.md`.
 
-> _TODO: paste in screenshots of the Feast retrieval output, MLflow UI runs
-> list, and the Prefect flow's console output when assembling the final PDF._
+A Streamlit visual demo (`app.py`) sits on top of the served models — pick a
+customer, see their purchase history, and compare the hybrid recommendation
+actually served by `models/infer.py` against the raw collaborative and
+content-based rankings side by side, each with its own scores (predicted
+rating / cosine similarity) and a "because you liked X" explanation for the
+content-based model.
+
+> _TODO: paste in screenshots of the Streamlit app, Feast retrieval output,
+> MLflow UI runs list, and the Prefect flow's console output when assembling
+> the final PDF._
 
 ## Conclusion and Future Scope
 

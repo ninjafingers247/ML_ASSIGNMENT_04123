@@ -18,6 +18,20 @@ python3 -m venv .venv-linux
 .venv-linux/bin/pip install -r requirements.txt
 ```
 
+## Visual demo (Streamlit)
+
+```bash
+.venv-linux/bin/streamlit run app.py
+```
+
+Pick a customer from the sidebar and see their purchase history alongside three
+tabs: the hybrid recommendation actually served by `models/infer.py`, the raw
+collaborative-filtering ranking (with predicted-rating scores), and the raw
+content-based ranking (with similarity scores and "because you liked X"
+explanations). Requires `models/train_collaborative.py` and
+`models/train_content_based.py` to have been run at least once (they save the
+`.joblib` model files this app loads).
+
 ## Run everything (orchestrated)
 
 ```bash
@@ -88,6 +102,7 @@ A JSON manifest per run records per-file row counts and sha256 checksums.
 
 ```
 recomart_pipeline/
+├── app.py                   # Streamlit visual demo (pick a customer, see recommendations)
 ├── source_data/            # upstream vendor CSV drop (DVC-tracked)
 ├── data/raw/                # partitioned raw lake (DVC-tracked via dvc.yaml)
 ├── data/processed/          # cleaned/prepared interactions (DVC-tracked)

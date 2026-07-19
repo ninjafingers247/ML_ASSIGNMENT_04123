@@ -55,26 +55,30 @@ def make_recommend_fn(model: dict):
     liked_items_by_user = model["liked_items_by_user"]
     seen_by_user = model["seen_by_user"]
 
-    def recommend(user_id: str, k: int = 10) -> list:
+    def recommend(user_id: str, k: int = 10, with_scores: bool = False):
         liked = liked_items_by_user.get(user_id, [])
         liked_rows = [item_id_to_row[i] for i in liked if i in item_id_to_row]
         if not liked_rows:
             return []
 
-        scores = {}
-        for row in liked_rows:
+        scores, because_of = {}, {}
+        for liked_item_id, row in zip(liked, liked_rows):
             distances, neighbor_rows = nn_model.kneighbors(
                 feature_matrix[row], n_neighbors=min(N_NEIGHBORS, feature_matrix.shape[0])
             )
             for dist, nrow in zip(distances[0], neighbor_rows[0]):
                 item_id = row_to_item_id[nrow]
                 similarity = 1 - dist
-                scores[item_id] = max(scores.get(item_id, 0.0), similarity)
+                if similarity > scores.get(item_id, -1):
+                    scores[item_id] = similarity
+                    because_of[item_id] = liked_item_id
 
         for item_id in seen_by_user.get(user_id, ()):
             scores.pop(item_id, None)
 
         ranked = sorted(scores.items(), key=lambda x: -x[1])[:k]
+        if with_scores:
+            return [(item_id, sim, because_of[item_id]) for item_id, sim in ranked]
         return [item_id for item_id, _ in ranked]
 
     return recommend
