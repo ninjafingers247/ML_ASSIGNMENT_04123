@@ -1,0 +1,24 @@
+2026-07-19 03:30:22,630 | INFO | train_collaborative | Loading prepared interactions for collaborative filtering
+2026-07-19 03:30:35,979 | INFO | train_collaborative | Train rows=95705, evaluable users with held-out item=5025
+2026-07-19 03:30:42,174 | INFO | train_collaborative | Collaborative filtering metrics: {'precision_at_10': 0.0013134328358208956, 'recall_at_10': 0.013134328358208954, 'ndcg_at_10': 0.009284597795569748, 'n_evaluated_users': 5025}
+2026-07-19 03:31:10,802 | INFO | train_collaborative | Loading prepared interactions for collaborative filtering
+2026-07-19 03:31:24,239 | INFO | train_collaborative | Train rows=95705, evaluable users with held-out item=5025
+2026-07-19 03:31:30,612 | INFO | train_collaborative | Collaborative filtering metrics: {'precision_at_10': 0.0012338308457711443, 'recall_at_10': 0.012338308457711443, 'ndcg_at_10': 0.008965796980527687, 'n_evaluated_users': 5025}
+2026-07-19 03:31:33,857 | INFO | train_collaborative | MLflow run b5d6648b2f8f400e9cd099546e802574 logged for collaborative_svd
+2026-07-19 03:31:58,809 | INFO | train_content_based | Loading prepared interactions for content-based filtering
+2026-07-19 03:32:25,515 | INFO | train_content_based | Content-based filtering metrics: {'precision_at_10': 0.010666666666666668, 'recall_at_10': 0.10666666666666667, 'ndcg_at_10': 0.06469510494455301, 'n_evaluated_users': 5025}
+2026-07-19 03:32:27,359 | INFO | train_content_based | MLflow run d57b9cbb599d4741bd18834d2521e4e9 logged for content_based_knn
+2026-07-19 03:34:53,779 | INFO | train_collaborative | Loading prepared interactions for collaborative filtering
+2026-07-19 03:35:07,414 | INFO | train_collaborative | Train rows=95705, evaluable users with held-out item=5025
+2026-07-19 03:35:13,511 | INFO | train_collaborative | Collaborative filtering metrics: {'precision_at_10': 0.0012935323383084577, 'recall_at_10': 0.012935323383084577, 'ndcg_at_10': 0.00921943758738431, 'n_evaluated_users': 5025}
+2026-07-19 03:35:15,275 | INFO | train_collaborative | MLflow run a69d82c852494b5c9d40b38783d4d499 logged for collaborative_svd
+2026-07-19 03:35:15,294 | INFO | train_content_based | Loading prepared interactions for content-based filtering
+2026-07-19 03:35:41,990 | INFO | train_content_based | Content-based filtering metrics: {'precision_at_10': 0.010666666666666668, 'recall_at_10': 0.10666666666666667, 'ndcg_at_10': 0.06469510494455301, 'n_evaluated_users': 5025}
+2026-07-19 03:35:43,412 | INFO | train_content_based | MLflow run 5c3dbb28879a449ba95e07b6269309c2 logged for content_based_knn
+2026-07-19 03:38:18,295 | INFO | train_collaborative | Loading prepared interactions for collaborative filtering
+2026-07-19 03:38:34,513 | INFO | train_collaborative | Train rows=95705, evaluable users with held-out item=5025
+2026-07-19 03:38:40,807 | INFO | train_collaborative | Collaborative filtering metrics: {'precision_at_10': 0.0012537313432835822, 'recall_at_10': 0.01253731343283582, 'ndcg_at_10': 0.009030255458027919, 'n_evaluated_users': 5025}
+2026-07-19 03:38:42,631 | INFO | train_collaborative | MLflow run b3c7f2f3a3b94a83a630d38d0e6722b3 logged for collaborative_svd
+2026-07-19 03:38:45,482 | INFO | train_content_based | Loading prepared interactions for content-based filtering
+2026-07-19 03:39:12,769 | INFO | train_content_based | Content-based filtering metrics: {'precision_at_10': 0.010666666666666668, 'recall_at_10': 0.10666666666666667, 'ndcg_at_10': 0.06469510494455301, 'n_evaluated_users': 5025}
+2026-07-19 03:39:14,615 | INFO | train_content_based | MLflow run 894f273b9b8d4d78b14b49d69e72a4a0 logged for content_based_knn

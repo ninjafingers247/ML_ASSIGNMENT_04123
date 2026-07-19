@@ -1,0 +1,148 @@
+schema: '2.0'
+stages:
+  ingest_csv:
+    cmd: .venv-linux/bin/python ingestion/ingest_csv_sources.py
+    deps:
+    - path: ingestion/common.py
+      hash: md5
+      md5: 2987af7493d1bb2e360149dc4827b798
+      size: 1886
+    - path: ingestion/ingest_csv_sources.py
+      hash: md5
+      md5: 551f10d4d6bb81138cdbbcdbc8b7a047
+      size: 3761
+    - path: source_data
+      hash: md5
+      md5: dec9fb66976c5c98e0f20a2b9fb47630.dir
+      size: 63869908
+      nfiles: 8
+    outs:
+    - path: data/raw/olist_csv_batch
+      hash: md5
+      md5: af211bdefdd2d86c0d6c7e837d5ea4ba.dir
+      size: 63871728
+      nfiles: 9
+  validate:
+    cmd: .venv-linux/bin/python validation/validate_data.py
+    deps:
+    - path: data/raw/olist_csv_batch
+      hash: md5
+      md5: af211bdefdd2d86c0d6c7e837d5ea4ba.dir
+      size: 63871728
+      nfiles: 9
+    - path: validation/validate_data.py
+      hash: md5
+      md5: 91bcd9bd5a725859cf4e58e18c8952b9
+      size: 7234
+    outs:
+    - path: reports/02_data_quality_report.md
+      hash: md5
+      md5: de7670b09e8201aabeb00d5c964a0570
+      size: 2150
+    - path: reports/02_data_quality_summary.json
+      hash: md5
+      md5: b5c582c3ba6c7bb3b7757cb1ccb46e79
+      size: 448
+  prepare:
+    cmd: .venv-linux/bin/python preparation/clean_and_eda.py
+    deps:
+    - path: data/raw/olist_csv_batch
+      hash: md5
+      md5: af211bdefdd2d86c0d6c7e837d5ea4ba.dir
+      size: 63871728
+      nfiles: 9
+    - path: preparation/clean_and_eda.py
+      hash: md5
+      md5: 8a78897d03b559618ce00244611b0ada
+      size: 6474
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: e564541091097e88d6d653798ee2a8b2.dir
+      size: 8113834
+      nfiles: 1
+    - path: preparation/eda_plots
+      hash: md5
+      md5: 3dd26a58d9eeb47d2751eab74bf0fbf7.dir
+      size: 83036
+      nfiles: 3
+  build_features:
+    cmd: .venv-linux/bin/python features/build_features.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: e564541091097e88d6d653798ee2a8b2.dir
+      size: 8113834
+      nfiles: 1
+    - path: data/raw/product_signals_api
+      hash: md5
+      md5: 11023f16ed279e31fdf8e2aba2a56752.dir
+      size: 101529
+      nfiles: 4
+    - path: features/build_features.py
+      hash: md5
+      md5: 9909709d3ced131552f4258c8ce1cb19
+      size: 5398
+    outs:
+    - path: data/features
+      hash: md5
+      md5: 5da515579fb585ad7855d13809c87bab.dir
+      size: 11797931
+      nfiles: 4
+    - path: features/recomart_features.db
+      hash: md5
+      md5: 2fc9aa27a8af2754b118a514d8d1e040
+      size: 39522304
+  train_collaborative:
+    cmd: .venv-linux/bin/python models/train_collaborative.py
+    deps:
+    - path: data/features/interactions.parquet
+      hash: md5
+      md5: 80acd1c18e3dd3094f6506b50ff383e6
+      size: 7174923
+    - path: models/data_split.py
+      hash: md5
+      md5: 4342b9564acfa4499a3eb36b85fdb41b
+      size: 1203
+    - path: models/evaluate.py
+      hash: md5
+      md5: 7d1cf3724b0d89e3b4912f408b5b4232
+      size: 1784
+    - path: models/train_collaborative.py
+      hash: md5
+      md5: 494e1b4fbe424f4bb5b48dbce3aa1f00
+      size: 4538
+    outs:
+    - path: models/collaborative_svd_model.joblib
+      hash: md5
+      md5: 09894a91d96963a4cae35187194c48f2
+      size: 26360080
+  train_content_based:
+    cmd: .venv-linux/bin/python models/train_content_based.py
+    deps:
+    - path: data/features/interactions.parquet
+      hash: md5
+      md5: 80acd1c18e3dd3094f6506b50ff383e6
+      size: 7174923
+    - path: models/data_split.py
+      hash: md5
+      md5: 4342b9564acfa4499a3eb36b85fdb41b
+      size: 1203
+    - path: models/evaluate.py
+      hash: md5
+      md5: 7d1cf3724b0d89e3b4912f408b5b4232
+      size: 1784
+    - path: models/train_content_based.py
+      hash: md5
+      md5: cf4550c32e29437f2a29ef9ce535ef1c
+      size: 5291
+    - path: source_data
+      hash: md5
+      md5: dec9fb66976c5c98e0f20a2b9fb47630.dir
+      size: 63869908
+      nfiles: 8
+    outs:
+    - path: models/content_based_model.joblib
+      hash: md5
+      md5: 7f06cdce10258673b3245ce5c9da1752
+      size: 11774888

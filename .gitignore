@@ -1,0 +1,11 @@
+recomart_pipeline/.venv-linux/
+recomart_pipeline/mlruns/
+recomart_pipeline/mlartifacts/
+recomart_pipeline/feature_store/feature_repo/data/
+recomart_pipeline/dvc_local_remote/
+recomart_pipeline/.dvc/cache/
+recomart_pipeline/.dvc/tmp/
+__pycache__/
+*.pyc
+*.db
+.ipynb_checkpoints/

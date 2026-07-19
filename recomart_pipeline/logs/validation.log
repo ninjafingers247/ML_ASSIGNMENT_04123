@@ -1,0 +1,108 @@
+2026-07-19 03:21:19,037 | INFO | validate_data | Loading latest raw partitions for validation
+2026-07-19 03:21:20,683 | INFO | validate_data | Schema check customers: PASS
+2026-07-19 03:21:20,684 | INFO | validate_data | Schema check orders: PASS
+2026-07-19 03:21:20,684 | INFO | validate_data | Schema check order_items: PASS
+2026-07-19 03:21:20,684 | INFO | validate_data | Schema check order_reviews: PASS
+2026-07-19 03:21:20,684 | INFO | validate_data | Schema check order_payments: PASS
+2026-07-19 03:21:20,684 | INFO | validate_data | Schema check products: PASS
+2026-07-19 03:21:20,684 | INFO | validate_data | Schema check sellers: PASS
+2026-07-19 03:21:20,684 | INFO | validate_data | Schema check category_translation: PASS
+2026-07-19 03:21:20,779 | INFO | validate_data | Duplicate check customers: 0 duplicates
+2026-07-19 03:21:20,788 | INFO | validate_data | Duplicate check orders: 0 duplicates
+2026-07-19 03:21:20,788 | INFO | validate_data | Duplicate check order_items: 0 duplicates
+2026-07-19 03:21:20,796 | INFO | validate_data | Duplicate check order_reviews: 814 duplicates
+2026-07-19 03:21:20,796 | INFO | validate_data | Duplicate check order_payments: 0 duplicates
+2026-07-19 03:21:20,798 | INFO | validate_data | Duplicate check products: 0 duplicates
+2026-07-19 03:21:20,799 | INFO | validate_data | Duplicate check sellers: 0 duplicates
+2026-07-19 03:21:20,799 | INFO | validate_data | Duplicate check category_translation: 0 duplicates
+2026-07-19 03:21:20,800 | INFO | validate_data | Range check review_score_out_of_1_5_range: 0 violations
+2026-07-19 03:21:20,800 | INFO | validate_data | Range check negative_or_zero_price: 0 violations
+2026-07-19 03:21:20,800 | INFO | validate_data | Range check negative_freight_value: 0 violations
+2026-07-19 03:21:20,800 | INFO | validate_data | Range check negative_payment_value: 0 violations
+2026-07-19 03:21:20,984 | INFO | validate_data | Referential integrity check order_items_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:21:20,984 | INFO | validate_data | Referential integrity check order_reviews_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:21:20,984 | INFO | validate_data | Referential integrity check order_payments_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:21:20,984 | INFO | validate_data | Referential integrity check order_items_orphaned_product_id: 0 orphaned rows
+2026-07-19 03:21:20,984 | INFO | validate_data | Referential integrity check orders_orphaned_customer_id: 0 orphaned rows
+2026-07-19 03:21:21,002 | INFO | validate_data | Validation complete. Report written to /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/reports/02_data_quality_report.md
+2026-07-19 03:28:27,410 | INFO | validate_data | Loading latest raw partitions for validation
+2026-07-19 03:28:28,410 | INFO | validate_data | Schema check customers: PASS
+2026-07-19 03:28:28,410 | INFO | validate_data | Schema check orders: PASS
+2026-07-19 03:28:28,410 | INFO | validate_data | Schema check order_items: PASS
+2026-07-19 03:28:28,410 | INFO | validate_data | Schema check order_reviews: PASS
+2026-07-19 03:28:28,411 | INFO | validate_data | Schema check order_payments: PASS
+2026-07-19 03:28:28,411 | INFO | validate_data | Schema check products: PASS
+2026-07-19 03:28:28,411 | INFO | validate_data | Schema check sellers: PASS
+2026-07-19 03:28:28,411 | INFO | validate_data | Schema check category_translation: PASS
+2026-07-19 03:28:28,509 | INFO | validate_data | Duplicate check customers: 0 duplicates
+2026-07-19 03:28:28,518 | INFO | validate_data | Duplicate check orders: 0 duplicates
+2026-07-19 03:28:28,518 | INFO | validate_data | Duplicate check order_items: 0 duplicates
+2026-07-19 03:28:28,527 | INFO | validate_data | Duplicate check order_reviews: 814 duplicates
+2026-07-19 03:28:28,528 | INFO | validate_data | Duplicate check order_payments: 0 duplicates
+2026-07-19 03:28:28,530 | INFO | validate_data | Duplicate check products: 0 duplicates
+2026-07-19 03:28:28,530 | INFO | validate_data | Duplicate check sellers: 0 duplicates
+2026-07-19 03:28:28,530 | INFO | validate_data | Duplicate check category_translation: 0 duplicates
+2026-07-19 03:28:28,531 | INFO | validate_data | Range check review_score_out_of_1_5_range: 0 violations
+2026-07-19 03:28:28,532 | INFO | validate_data | Range check negative_or_zero_price: 0 violations
+2026-07-19 03:28:28,532 | INFO | validate_data | Range check negative_freight_value: 0 violations
+2026-07-19 03:28:28,532 | INFO | validate_data | Range check negative_payment_value: 0 violations
+2026-07-19 03:28:28,726 | INFO | validate_data | Referential integrity check order_items_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:28:28,726 | INFO | validate_data | Referential integrity check order_reviews_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:28:28,726 | INFO | validate_data | Referential integrity check order_payments_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:28:28,726 | INFO | validate_data | Referential integrity check order_items_orphaned_product_id: 0 orphaned rows
+2026-07-19 03:28:28,726 | INFO | validate_data | Referential integrity check orders_orphaned_customer_id: 0 orphaned rows
+2026-07-19 03:28:28,745 | INFO | validate_data | Validation complete. Report written to /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/reports/02_data_quality_report.md
+2026-07-19 03:34:21,979 | INFO | validate_data | Loading latest raw partitions for validation
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check customers: PASS
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check orders: PASS
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check order_items: PASS
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check order_reviews: PASS
+2026-07-19 03:34:22,961 | INFO | validate_data | Schema check order_payments: PASS
+2026-07-19 03:34:22,961 | INFO | validate_data | Schema check products: PASS
+2026-07-19 03:34:22,961 | INFO | validate_data | Schema check sellers: PASS
+2026-07-19 03:34:22,962 | INFO | validate_data | Schema check category_translation: PASS
+2026-07-19 03:34:23,055 | INFO | validate_data | Duplicate check customers: 0 duplicates
+2026-07-19 03:34:23,064 | INFO | validate_data | Duplicate check orders: 0 duplicates
+2026-07-19 03:34:23,064 | INFO | validate_data | Duplicate check order_items: 0 duplicates
+2026-07-19 03:34:23,073 | INFO | validate_data | Duplicate check order_reviews: 814 duplicates
+2026-07-19 03:34:23,073 | INFO | validate_data | Duplicate check order_payments: 0 duplicates
+2026-07-19 03:34:23,075 | INFO | validate_data | Duplicate check products: 0 duplicates
+2026-07-19 03:34:23,076 | INFO | validate_data | Duplicate check sellers: 0 duplicates
+2026-07-19 03:34:23,076 | INFO | validate_data | Duplicate check category_translation: 0 duplicates
+2026-07-19 03:34:23,077 | INFO | validate_data | Range check review_score_out_of_1_5_range: 0 violations
+2026-07-19 03:34:23,078 | INFO | validate_data | Range check negative_or_zero_price: 0 violations
+2026-07-19 03:34:23,078 | INFO | validate_data | Range check negative_freight_value: 0 violations
+2026-07-19 03:34:23,078 | INFO | validate_data | Range check negative_payment_value: 0 violations
+2026-07-19 03:34:23,256 | INFO | validate_data | Referential integrity check order_items_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check order_reviews_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check order_payments_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check order_items_orphaned_product_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check orders_orphaned_customer_id: 0 orphaned rows
+2026-07-19 03:34:23,277 | INFO | validate_data | Validation complete. Report written to /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/reports/02_data_quality_report.md
+2026-07-19 03:38:09,961 | INFO | validate_data | Loading latest raw partitions for validation
+2026-07-19 03:38:11,814 | INFO | validate_data | Schema check customers: PASS
+2026-07-19 03:38:11,814 | INFO | validate_data | Schema check orders: PASS
+2026-07-19 03:38:11,814 | INFO | validate_data | Schema check order_items: PASS
+2026-07-19 03:38:11,814 | INFO | validate_data | Schema check order_reviews: PASS
+2026-07-19 03:38:11,814 | INFO | validate_data | Schema check order_payments: PASS
+2026-07-19 03:38:11,815 | INFO | validate_data | Schema check products: PASS
+2026-07-19 03:38:11,815 | INFO | validate_data | Schema check sellers: PASS
+2026-07-19 03:38:11,815 | INFO | validate_data | Schema check category_translation: PASS
+2026-07-19 03:38:11,917 | INFO | validate_data | Duplicate check customers: 0 duplicates
+2026-07-19 03:38:11,927 | INFO | validate_data | Duplicate check orders: 0 duplicates
+2026-07-19 03:38:11,927 | INFO | validate_data | Duplicate check order_items: 0 duplicates
+2026-07-19 03:38:11,937 | INFO | validate_data | Duplicate check order_reviews: 814 duplicates
+2026-07-19 03:38:11,937 | INFO | validate_data | Duplicate check order_payments: 0 duplicates
+2026-07-19 03:38:11,939 | INFO | validate_data | Duplicate check products: 0 duplicates
+2026-07-19 03:38:11,940 | INFO | validate_data | Duplicate check sellers: 0 duplicates
+2026-07-19 03:38:11,940 | INFO | validate_data | Duplicate check category_translation: 0 duplicates
+2026-07-19 03:38:11,942 | INFO | validate_data | Range check review_score_out_of_1_5_range: 0 violations
+2026-07-19 03:38:11,942 | INFO | validate_data | Range check negative_or_zero_price: 0 violations
+2026-07-19 03:38:11,942 | INFO | validate_data | Range check negative_freight_value: 0 violations
+2026-07-19 03:38:11,942 | INFO | validate_data | Range check negative_payment_value: 0 violations
+2026-07-19 03:38:12,233 | INFO | validate_data | Referential integrity check order_items_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:38:12,233 | INFO | validate_data | Referential integrity check order_reviews_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:38:12,233 | INFO | validate_data | Referential integrity check order_payments_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:38:12,233 | INFO | validate_data | Referential integrity check order_items_orphaned_product_id: 0 orphaned rows
+2026-07-19 03:38:12,233 | INFO | validate_data | Referential integrity check orders_orphaned_customer_id: 0 orphaned rows
+2026-07-19 03:38:12,256 | INFO | validate_data | Validation complete. Report written to /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/reports/02_data_quality_report.md

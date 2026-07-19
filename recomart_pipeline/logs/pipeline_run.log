@@ -1,0 +1,479 @@
+03:33:30.204 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8600
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+03:33:39.558 | ERROR   | docket.dependencies - ↩ [   505ms] send_telemetry_heartbeat(){send_telemetry_heartbeat}
+Traceback (most recent call last):
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 183, in execute
+    self._adapt_connection._handle_exception(error)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 343, in _handle_exception
+    raise error
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 165, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/docket/worker.py", line 1111, in _execute
+    result = await execution.function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/prefect/server/services/telemetry.py", line 80, in send_telemetry_heartbeat
+    session_start_timestamp, session_id = await _fetch_or_set_telemetry_session(db=db)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/prefect/server/services/telemetry.py", line 54, in _fetch_or_set_telemetry_session
+    await configuration.write_configuration(session, telemetry_session)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/prefect/server/models/configuration.py", line 29, in write_configuration
+    await session.flush()
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/ext/asyncio/session.py", line 786, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 183, in execute
+    self._adapt_connection._handle_exception(error)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 343, in _handle_exception
+    raise error
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py", line 165, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/cursor.py", line 40, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/cursor.py", line 32, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/.venv-linux/lib/python3.11/site-packages/aiosqlite/core.py", line 63, in _connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: INSERT INTO configuration ("key", value, id, created, updated) VALUES (:key, :value, :id, :created, :updated)]
+[parameters: {'key': 'TELEMETRY_SESSION', 'value': '{"session_id": "86314121-0ef9-4dc5-b852-f145b9df04b2", "session_start_timestamp": "2026-07-19T03:33:39.086387+00:00"}', 'id': '5b26e282-16d5-4248-b798-bc49e74aea7a', 'created': '2026-07-19 03:33:39.546652', 'updated': '2026-07-19 03:33:39.546663'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+03:33:39.851 | INFO    | Flow run 'tangerine-puma' - Beginning flow run 'tangerine-puma' for flow 'recomart_data_pipeline'
+03:33:39.856 | INFO    | Flow run 'tangerine-puma' - Starting RecoMart end-to-end data management pipeline
+03:33:49.933 | INFO    | Task run 'start_mock_api_server-f0c' - Mock product-signals API is healthy (pid=24313)
+03:33:49.936 | INFO    | Task run 'start_mock_api_server-f0c' - Finished in state Completed()
+03:33:49.940 | INFO    | Task run 'ingest_csv_task-4ff' - Running batch CSV ingestion...
+2026-07-19 03:33:49,941 | INFO | ingest_csv | Starting batch CSV ingestion run 20260719_033349
+03:33:49.941 | INFO    | ingest_csv - Starting batch CSV ingestion run 20260719_033349
+2026-07-19 03:33:49,964 | INFO | ingest_csv | Ingested olist_customers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/customers/20260719_033349 (99441 rows)
+03:33:49.964 | INFO    | ingest_csv - Ingested olist_customers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/customers/20260719_033349 (99441 rows)
+2026-07-19 03:33:50,003 | INFO | ingest_csv | Ingested olist_orders_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/orders/20260719_033349 (99441 rows)
+03:33:50.003 | INFO    | ingest_csv - Ingested olist_orders_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/orders/20260719_033349 (99441 rows)
+2026-07-19 03:33:50,037 | INFO | ingest_csv | Ingested olist_order_items_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_items/20260719_033349 (112650 rows)
+03:33:50.037 | INFO    | ingest_csv - Ingested olist_order_items_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_items/20260719_033349 (112650 rows)
+2026-07-19 03:33:50,092 | INFO | ingest_csv | Ingested olist_order_reviews_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_reviews/20260719_033349 (104719 rows)
+03:33:50.092 | INFO    | ingest_csv - Ingested olist_order_reviews_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_reviews/20260719_033349 (104719 rows)
+2026-07-19 03:33:50,107 | INFO | ingest_csv | Ingested olist_order_payments_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_payments/20260719_033349 (103886 rows)
+03:33:50.107 | INFO    | ingest_csv - Ingested olist_order_payments_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_payments/20260719_033349 (103886 rows)
+2026-07-19 03:33:50,113 | INFO | ingest_csv | Ingested olist_products_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/products/20260719_033349 (32951 rows)
+03:33:50.113 | INFO    | ingest_csv - Ingested olist_products_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/products/20260719_033349 (32951 rows)
+2026-07-19 03:33:50,114 | WARNING | ingest_csv | Attempt 1/3 failed for _copy_one: simulated transient read error from vendor feed
+03:33:50.114 | WARNING | ingest_csv - Attempt 1/3 failed for _copy_one: simulated transient read error from vendor feed
+2026-07-19 03:33:51,115 | INFO | ingest_csv | Ingested olist_sellers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/sellers/20260719_033349 (3095 rows)
+03:33:51.115 | INFO    | ingest_csv - Ingested olist_sellers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/sellers/20260719_033349 (3095 rows)
+2026-07-19 03:33:51,116 | INFO | ingest_csv | Ingested product_category_name_translation.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/category_translation/20260719_033349 (71 rows)
+03:33:51.116 | INFO    | ingest_csv - Ingested product_category_name_translation.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/category_translation/20260719_033349 (71 rows)
+2026-07-19 03:33:51,116 | INFO | ingest_csv | Finished batch CSV ingestion run 20260719_033349: 8/8 files ingested. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/_manifests/manifest_20260719_033349.json
+03:33:51.116 | INFO    | ingest_csv - Finished batch CSV ingestion run 20260719_033349: 8/8 files ingested. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/_manifests/manifest_20260719_033349.json
+03:33:51.118 | INFO    | Task run 'ingest_csv_task-4ff' - Finished in state Completed()
+03:33:51.122 | INFO    | Task run 'ingest_api_task-2d4' - Running near-real-time API ingestion...
+2026-07-19 03:33:51,123 | INFO | ingest_api | Starting API ingestion run 20260719_033351
+03:33:51.123 | INFO    | ingest_api - Starting API ingestion run 20260719_033351
+2026-07-19 03:33:51,128 | INFO | ingest_api | Mock API healthy, catalog size=32951
+03:33:51.128 | INFO    | ingest_api - Mock API healthy, catalog size=32951
+2026-07-19 03:33:51,165 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 001795ec6f1b187d37335e1c4704762e
+03:33:51.165 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 001795ec6f1b187d37335e1c4704762e
+2026-07-19 03:33:51,675 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 001c5d71ac6ad696d22315953758fa04
+03:33:51.675 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 001c5d71ac6ad696d22315953758fa04
+2026-07-19 03:33:52,191 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 002959d7a0b0990fe2d69988affcbc80
+03:33:52.191 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 002959d7a0b0990fe2d69988affcbc80
+2026-07-19 03:33:52,704 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 002ec297b1b00fb9dde7ee6ac24b6771
+03:33:52.704 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 002ec297b1b00fb9dde7ee6ac24b6771
+2026-07-19 03:33:53,216 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0036bb031e69d915cd384d1b3838b5d3
+03:33:53.216 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0036bb031e69d915cd384d1b3838b5d3
+2026-07-19 03:33:53,719 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 0036bb031e69d915cd384d1b3838b5d3
+03:33:53.719 | WARNING | ingest_api - Attempt 2/4 failed for _fetch_product_signals: server error 503 for 0036bb031e69d915cd384d1b3838b5d3
+2026-07-19 03:33:54,733 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 003dbcabcf8e3231de657c7d9f9a5eba
+03:33:54.733 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 003dbcabcf8e3231de657c7d9f9a5eba
+2026-07-19 03:33:55,244 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0043d1a25ef08fb6f41b8fa6f91742ab
+03:33:55.244 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0043d1a25ef08fb6f41b8fa6f91742ab
+2026-07-19 03:33:55,765 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00636f9286f69c9f1bdabe76e670fb50
+03:33:55.765 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00636f9286f69c9f1bdabe76e670fb50
+2026-07-19 03:33:56,273 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 006619bbed68b000c8ba3f8725d5409e
+03:33:56.273 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 006619bbed68b000c8ba3f8725d5409e
+2026-07-19 03:33:56,778 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0067f97995b0c3a86739734dc87ee6b6
+03:33:56.778 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0067f97995b0c3a86739734dc87ee6b6
+2026-07-19 03:33:57,296 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0081787b18cce4acc2d1adec4520d7ba
+03:33:57.296 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0081787b18cce4acc2d1adec4520d7ba
+2026-07-19 03:33:57,814 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 008cff0e5792219fae03e570f980b330
+03:33:57.814 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 008cff0e5792219fae03e570f980b330
+2026-07-19 03:33:58,327 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0092a9e1c8a471753ed7ffa7eef5086e
+03:33:58.327 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0092a9e1c8a471753ed7ffa7eef5086e
+2026-07-19 03:33:58,853 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00b264091d1c8df03976c3f3b176b35c
+03:33:58.853 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00b264091d1c8df03976c3f3b176b35c
+2026-07-19 03:33:59,397 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00dc8a1b2de45a7fca5921544e5f351d
+03:33:59.397 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00dc8a1b2de45a7fca5921544e5f351d
+2026-07-19 03:33:59,913 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00e2784f846618842151d40ec730ece0
+03:33:59.913 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00e2784f846618842151d40ec730ece0
+2026-07-19 03:34:00,419 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00e32638060f6356e6f00749dc466b5c
+03:34:00.419 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00e32638060f6356e6f00749dc466b5c
+2026-07-19 03:34:00,943 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00f8c37377b038c9c791128d2f928111
+03:34:00.943 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00f8c37377b038c9c791128d2f928111
+2026-07-19 03:34:01,449 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00faa46f36261af8bbf3a4d37fa4841b
+03:34:01.449 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00faa46f36261af8bbf3a4d37fa4841b
+2026-07-19 03:34:01,955 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00fd6afd95fe066db8433832180a5369
+03:34:01.955 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00fd6afd95fe066db8433832180a5369
+2026-07-19 03:34:02,465 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0103208eb1ea5a1a7359c0251a65e37a
+03:34:02.465 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0103208eb1ea5a1a7359c0251a65e37a
+2026-07-19 03:34:02,968 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 0103208eb1ea5a1a7359c0251a65e37a
+03:34:02.968 | WARNING | ingest_api - Attempt 2/4 failed for _fetch_product_signals: server error 503 for 0103208eb1ea5a1a7359c0251a65e37a
+2026-07-19 03:34:03,978 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01078a94cb29913dfda1a962fd4e3400
+03:34:03.978 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01078a94cb29913dfda1a962fd4e3400
+2026-07-19 03:34:04,489 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 010a3a47c14f1295796c08419f32cef6
+03:34:04.489 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 010a3a47c14f1295796c08419f32cef6
+2026-07-19 03:34:05,005 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0110986ff84d644fee920efb18577292
+03:34:05.005 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0110986ff84d644fee920efb18577292
+2026-07-19 03:34:05,528 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 011be89e68e286ac07f51c22ecbb04aa
+03:34:05.528 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 011be89e68e286ac07f51c22ecbb04aa
+2026-07-19 03:34:06,044 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 012dd0e1c1f14325ee35f06748329355
+03:34:06.044 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 012dd0e1c1f14325ee35f06748329355
+2026-07-19 03:34:06,577 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0141015d2469c1c5f9d7d377d1cdb44a
+03:34:06.577 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0141015d2469c1c5f9d7d377d1cdb44a
+2026-07-19 03:34:07,098 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01503fbd89d42654631476b292b8bc8c
+03:34:07.098 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01503fbd89d42654631476b292b8bc8c
+2026-07-19 03:34:07,610 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 015527ec9502daa03dfd0e22ef1d1288
+03:34:07.610 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 015527ec9502daa03dfd0e22ef1d1288
+2026-07-19 03:34:08,128 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 015f06d7b83e5a6f7d1765fb5d8bdfa6
+03:34:08.128 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 015f06d7b83e5a6f7d1765fb5d8bdfa6
+2026-07-19 03:34:08,634 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01604238fbc11ce379e537a76b26bc94
+03:34:08.634 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01604238fbc11ce379e537a76b26bc94
+2026-07-19 03:34:09,159 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 016f3b29107ed03252e477b08445cec4
+03:34:09.159 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 016f3b29107ed03252e477b08445cec4
+2026-07-19 03:34:09,671 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0176300ac9900e260f35fbddd71c6d92
+03:34:09.671 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0176300ac9900e260f35fbddd71c6d92
+2026-07-19 03:34:10,205 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 018ca97302e4293050cc41413194bb19
+03:34:10.205 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 018ca97302e4293050cc41413194bb19
+2026-07-19 03:34:10,713 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 019003324f0a201dd2c8962beaf94b6d
+03:34:10.713 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 019003324f0a201dd2c8962beaf94b6d
+2026-07-19 03:34:11,227 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 019d8b8866a5555ac955b45ffd35e039
+03:34:11.227 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 019d8b8866a5555ac955b45ffd35e039
+2026-07-19 03:34:11,731 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 019d8b8866a5555ac955b45ffd35e039
+03:34:11.731 | WARNING | ingest_api - Attempt 2/4 failed for _fetch_product_signals: server error 503 for 019d8b8866a5555ac955b45ffd35e039
+2026-07-19 03:34:12,737 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a0f7d0d081d619be810e512be45f97
+03:34:12.737 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a0f7d0d081d619be810e512be45f97
+2026-07-19 03:34:13,245 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a2ad2b54cd734f78cb817da7752d8b
+03:34:13.245 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a2ad2b54cd734f78cb817da7752d8b
+2026-07-19 03:34:13,755 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a52711e989a817ab8100ddcf8d2940
+03:34:13.755 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a52711e989a817ab8100ddcf8d2940
+2026-07-19 03:34:14,278 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01b154ceb5457897eb28b9e549f28219
+03:34:14.278 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01b154ceb5457897eb28b9e549f28219
+2026-07-19 03:34:14,781 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01b154ceb5457897eb28b9e549f28219
+03:34:14.781 | WARNING | ingest_api - Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01b154ceb5457897eb28b9e549f28219
+2026-07-19 03:34:15,805 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01c3486b189d16ad1b35270d5881e5a4
+03:34:15.805 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01c3486b189d16ad1b35270d5881e5a4
+2026-07-19 03:34:16,310 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01c3486b189d16ad1b35270d5881e5a4
+03:34:16.310 | WARNING | ingest_api - Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01c3486b189d16ad1b35270d5881e5a4
+2026-07-19 03:34:17,322 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01c9a70868bec5b748c67fcc26ce5895
+03:34:17.322 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01c9a70868bec5b748c67fcc26ce5895
+2026-07-19 03:34:17,825 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01c9a70868bec5b748c67fcc26ce5895
+03:34:17.825 | WARNING | ingest_api - Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01c9a70868bec5b748c67fcc26ce5895
+2026-07-19 03:34:18,847 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01cfc3d9c29504c2d370933e53f002b4
+03:34:18.847 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01cfc3d9c29504c2d370933e53f002b4
+2026-07-19 03:34:19,368 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01ea47d0dff23faa8d07ba3f353d2af0
+03:34:19.368 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01ea47d0dff23faa8d07ba3f353d2af0
+2026-07-19 03:34:19,904 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 020a80cb704bf65f38761fcedf2af192
+03:34:19.904 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 020a80cb704bf65f38761fcedf2af192
+2026-07-19 03:34:20,417 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 021d39ee869e87d5288f4e731df4a90e
+03:34:20.417 | WARNING | ingest_api - Attempt 1/4 failed for _fetch_product_signals: server error 503 for 021d39ee869e87d5288f4e731df4a90e
+2026-07-19 03:34:20,921 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 021d39ee869e87d5288f4e731df4a90e
+03:34:20.921 | WARNING | ingest_api - Attempt 2/4 failed for _fetch_product_signals: server error 503 for 021d39ee869e87d5288f4e731df4a90e
+2026-07-19 03:34:21,970 | INFO | ingest_api | Finished API ingestion run 20260719_033351: 300/300 succeeded, 0 failed. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/product_signals_api/_manifests/manifest_20260719_033351.json
+03:34:21.970 | INFO    | ingest_api - Finished API ingestion run 20260719_033351: 300/300 succeeded, 0 failed. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/product_signals_api/_manifests/manifest_20260719_033351.json
+03:34:21.972 | INFO    | Task run 'ingest_api_task-2d4' - Finished in state Completed()
+03:34:21.978 | INFO    | Task run 'validate_task-f5e' - Running data validation...
+2026-07-19 03:34:21,979 | INFO | validate_data | Loading latest raw partitions for validation
+03:34:21.979 | INFO    | validate_data - Loading latest raw partitions for validation
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check customers: PASS
+03:34:22.960 | INFO    | validate_data - Schema check customers: PASS
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check orders: PASS
+03:34:22.960 | INFO    | validate_data - Schema check orders: PASS
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check order_items: PASS
+03:34:22.960 | INFO    | validate_data - Schema check order_items: PASS
+2026-07-19 03:34:22,960 | INFO | validate_data | Schema check order_reviews: PASS
+03:34:22.960 | INFO    | validate_data - Schema check order_reviews: PASS
+2026-07-19 03:34:22,961 | INFO | validate_data | Schema check order_payments: PASS
+03:34:22.961 | INFO    | validate_data - Schema check order_payments: PASS
+2026-07-19 03:34:22,961 | INFO | validate_data | Schema check products: PASS
+03:34:22.961 | INFO    | validate_data - Schema check products: PASS
+2026-07-19 03:34:22,961 | INFO | validate_data | Schema check sellers: PASS
+03:34:22.961 | INFO    | validate_data - Schema check sellers: PASS
+2026-07-19 03:34:22,962 | INFO | validate_data | Schema check category_translation: PASS
+03:34:22.962 | INFO    | validate_data - Schema check category_translation: PASS
+2026-07-19 03:34:23,055 | INFO | validate_data | Duplicate check customers: 0 duplicates
+03:34:23.055 | INFO    | validate_data - Duplicate check customers: 0 duplicates
+2026-07-19 03:34:23,064 | INFO | validate_data | Duplicate check orders: 0 duplicates
+03:34:23.064 | INFO    | validate_data - Duplicate check orders: 0 duplicates
+2026-07-19 03:34:23,064 | INFO | validate_data | Duplicate check order_items: 0 duplicates
+03:34:23.064 | INFO    | validate_data - Duplicate check order_items: 0 duplicates
+2026-07-19 03:34:23,073 | INFO | validate_data | Duplicate check order_reviews: 814 duplicates
+03:34:23.073 | INFO    | validate_data - Duplicate check order_reviews: 814 duplicates
+2026-07-19 03:34:23,073 | INFO | validate_data | Duplicate check order_payments: 0 duplicates
+03:34:23.073 | INFO    | validate_data - Duplicate check order_payments: 0 duplicates
+2026-07-19 03:34:23,075 | INFO | validate_data | Duplicate check products: 0 duplicates
+03:34:23.075 | INFO    | validate_data - Duplicate check products: 0 duplicates
+2026-07-19 03:34:23,076 | INFO | validate_data | Duplicate check sellers: 0 duplicates
+03:34:23.076 | INFO    | validate_data - Duplicate check sellers: 0 duplicates
+2026-07-19 03:34:23,076 | INFO | validate_data | Duplicate check category_translation: 0 duplicates
+03:34:23.076 | INFO    | validate_data - Duplicate check category_translation: 0 duplicates
+2026-07-19 03:34:23,077 | INFO | validate_data | Range check review_score_out_of_1_5_range: 0 violations
+03:34:23.077 | INFO    | validate_data - Range check review_score_out_of_1_5_range: 0 violations
+2026-07-19 03:34:23,078 | INFO | validate_data | Range check negative_or_zero_price: 0 violations
+03:34:23.078 | INFO    | validate_data - Range check negative_or_zero_price: 0 violations
+2026-07-19 03:34:23,078 | INFO | validate_data | Range check negative_freight_value: 0 violations
+03:34:23.078 | INFO    | validate_data - Range check negative_freight_value: 0 violations
+2026-07-19 03:34:23,078 | INFO | validate_data | Range check negative_payment_value: 0 violations
+03:34:23.078 | INFO    | validate_data - Range check negative_payment_value: 0 violations
+2026-07-19 03:34:23,256 | INFO | validate_data | Referential integrity check order_items_orphaned_order_id: 0 orphaned rows
+03:34:23.256 | INFO    | validate_data - Referential integrity check order_items_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check order_reviews_orphaned_order_id: 0 orphaned rows
+03:34:23.257 | INFO    | validate_data - Referential integrity check order_reviews_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check order_payments_orphaned_order_id: 0 orphaned rows
+03:34:23.257 | INFO    | validate_data - Referential integrity check order_payments_orphaned_order_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check order_items_orphaned_product_id: 0 orphaned rows
+03:34:23.257 | INFO    | validate_data - Referential integrity check order_items_orphaned_product_id: 0 orphaned rows
+2026-07-19 03:34:23,257 | INFO | validate_data | Referential integrity check orders_orphaned_customer_id: 0 orphaned rows
+03:34:23.257 | INFO    | validate_data - Referential integrity check orders_orphaned_customer_id: 0 orphaned rows
+2026-07-19 03:34:23,277 | INFO | validate_data | Validation complete. Report written to /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/reports/02_data_quality_report.md
+03:34:23.277 | INFO    | validate_data - Validation complete. Report written to /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/reports/02_data_quality_report.md
+03:34:23.319 | INFO    | Task run 'validate_task-f5e' - Finished in state Completed()
+03:34:23.323 | INFO    | Task run 'prepare_task-c69' - Running data preparation and EDA...
+2026-07-19 03:34:24,715 | INFO | prepare_eda | Built interactions: 98410 reviews -> 98410 joined rows -> 111461 after dropping 0 incomplete
+03:34:24.715 | INFO    | prepare_eda - Built interactions: 98410 reviews -> 98410 joined rows -> 111461 after dropping 0 incomplete
+2026-07-19 03:34:24,841 | INFO | prepare_eda | Encoded 72 categories, 27 states; normalized price/freight/timestamp
+03:34:24.841 | INFO    | prepare_eda - Encoded 72 categories, 27 states; normalized price/freight/timestamp
+2026-07-19 03:34:25,500 | INFO | prepare_eda | Sparsity: 94698 users x 32660 items, 111461 interactions, density=0.000036
+03:34:25.500 | INFO    | prepare_eda - Sparsity: 94698 users x 32660 items, 111461 interactions, density=0.000036
+2026-07-19 03:34:25,688 | INFO | prepare_eda | Preparation complete: 111461 prepared interaction rows, 94698 users, 32660 items, density=0.000036 -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/processed/interactions_prepared.parquet
+03:34:25.688 | INFO    | prepare_eda - Preparation complete: 111461 prepared interaction rows, 94698 users, 32660 items, density=0.000036 -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/processed/interactions_prepared.parquet
+03:34:25.690 | INFO    | Task run 'prepare_task-c69' - Finished in state Completed()
+03:34:25.694 | INFO    | Task run 'build_features_task-096' - Running feature engineering...
+2026-07-19 03:34:27,305 | INFO | build_features | Computed 7096 co-occurring item pairs (kept top 5000)
+03:34:27.305 | INFO    | build_features - Computed 7096 co-occurring item pairs (kept top 5000)
+2026-07-19 03:34:28,896 | INFO | build_features | Wrote 4 tables to SQLite warehouse at /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/features/recomart_features.db
+03:34:28.896 | INFO    | build_features - Wrote 4 tables to SQLite warehouse at /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/features/recomart_features.db
+2026-07-19 03:34:28,897 | INFO | build_features | Feature build complete: 94698 users, 32660 items, 100730 interactions, 5000 cooc pairs
+03:34:28.897 | INFO    | build_features - Feature build complete: 94698 users, 32660 items, 100730 interactions, 5000 cooc pairs
+03:34:28.909 | INFO    | Task run 'build_features_task-096' - Finished in state Completed()
+03:34:28.912 | INFO    | Task run 'feast_apply_materialize_task-931' - Applying and materializing the Feast feature store...
+/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/feature_store/feature_repo/features.py:13: DeprecationWarning: Entity value_type will be mandatory in the next release. Please specify a value_type for entity 'customer_unique_id'.
+  customer = Entity(name="customer_unique_id", join_keys=["customer_unique_id"])
+/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/feature_store/feature_repo/features.py:14: DeprecationWarning: Entity value_type will be mandatory in the next release. Please specify a value_type for entity 'product_id'.
+  product = Entity(name="product_id", join_keys=["product_id"])
+No project found in the repository. Using project name recomart defined in feature_store.yaml
+Applying changes for project recomart
+Updated feature view user_features
+	batch_source: type: BATCH_FILE
+timestamp_field: "event_timestamp"
+file_options {
+  uri: "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/features/user_features.parquet"
+}
+data_source_class_type: "feast.infra.offline_stores.file_source.FileSource"
+name: "user_features_source"
+meta {
+  created_timestamp {
+    seconds: 1784431572
+    nanos: 60975000
+  }
+  last_updated_timestamp {
+    seconds: 1784431572
+    nanos: 99928000
+  }
+}
+ -> type: BATCH_FILE
+timestamp_field: "event_timestamp"
+file_options {
+  uri: "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/features/user_features.parquet"
+}
+data_source_class_type: "feast.infra.offline_stores.file_source.FileSource"
+name: "user_features_source"
+meta {
+  created_timestamp {
+    seconds: 1784432073
+    nanos: 535957000
+  }
+  last_updated_timestamp {
+    seconds: 1784432073
+    nanos: 535957000
+  }
+}
+
+Updated feature view interactions
+	batch_source: type: BATCH_FILE
+timestamp_field: "event_timestamp"
+file_options {
+  uri: "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/features/interactions.parquet"
+}
+data_source_class_type: "feast.infra.offline_stores.file_source.FileSource"
+name: "interactions_source"
+meta {
+  created_timestamp {
+    seconds: 1784431572
+    nanos: 61204000
+  }
+  last_updated_timestamp {
+    seconds: 1784431572
+    nanos: 100134000
+  }
+}
+ -> type: BATCH_FILE
+timestamp_field: "event_timestamp"
+file_options {
+  uri: "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/features/interactions.parquet"
+}
+data_source_class_type: "feast.infra.offline_stores.file_source.FileSource"
+name: "interactions_source"
+meta {
+  created_timestamp {
+    seconds: 1784432073
+    nanos: 536234000
+  }
+  last_updated_timestamp {
+    seconds: 1784432073
+    nanos: 536234000
+  }
+}
+
+Updated feature view item_features
+	batch_source: type: BATCH_FILE
+timestamp_field: "event_timestamp"
+file_options {
+  uri: "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/features/item_features.parquet"
+}
+data_source_class_type: "feast.infra.offline_stores.file_source.FileSource"
+name: "item_features_source"
+meta {
+  created_timestamp {
+    seconds: 1784431572
+    nanos: 61099000
+  }
+  last_updated_timestamp {
+    seconds: 1784431572
+    nanos: 100259000
+  }
+}
+ -> type: BATCH_FILE
+timestamp_field: "event_timestamp"
+file_options {
+  uri: "/home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/features/item_features.parquet"
+}
+data_source_class_type: "feast.infra.offline_stores.file_source.FileSource"
+name: "item_features_source"
+meta {
+  created_timestamp {
+    seconds: 1784432073
+    nanos: 536118000
+  }
+  last_updated_timestamp {
+    seconds: 1784432073
+    nanos: 536118000
+  }
+}
+
+
+No changes to infrastructure
+Materializing [1m[32m3[0m feature views from [1m[32m2016-01-01 00:00:00+00:00[0m to [1m[32m2030-01-01 00:00:00+00:00[0m into the [1m[32msqlite[0m online store.
+
+[1m[32muser_features[0m:
+[1m[32mitem_features[0m:
+[1m[32minteractions[0m:
+03:34:53.773 | INFO    | Task run 'feast_apply_materialize_task-931' - Finished in state Completed()
+03:34:53.778 | INFO    | Task run 'train_and_evaluate_task-a61' - Training collaborative filtering model...
+2026-07-19 03:34:53,779 | INFO | train_collaborative | Loading prepared interactions for collaborative filtering
+03:34:53.779 | INFO    | train_collaborative - Loading prepared interactions for collaborative filtering
+2026-07-19 03:35:07,414 | INFO | train_collaborative | Train rows=95705, evaluable users with held-out item=5025
+03:35:07.414 | INFO    | train_collaborative - Train rows=95705, evaluable users with held-out item=5025
+2026-07-19 03:35:13,511 | INFO | train_collaborative | Collaborative filtering metrics: {'precision_at_10': 0.0012935323383084577, 'recall_at_10': 0.012935323383084577, 'ndcg_at_10': 0.00921943758738431, 'n_evaluated_users': 5025}
+03:35:13.511 | INFO    | train_collaborative - Collaborative filtering metrics: {'precision_at_10': 0.0012935323383084577, 'recall_at_10': 0.012935323383084577, 'ndcg_at_10': 0.00921943758738431, 'n_evaluated_users': 5025}
+2026-07-19 03:35:15,275 | INFO | train_collaborative | MLflow run a69d82c852494b5c9d40b38783d4d499 logged for collaborative_svd
+03:35:15.275 | INFO    | train_collaborative - MLflow run a69d82c852494b5c9d40b38783d4d499 logged for collaborative_svd
+03:35:15.293 | INFO    | Task run 'train_and_evaluate_task-a61' - Training content-based model...
+2026-07-19 03:35:15,294 | INFO | train_content_based | Loading prepared interactions for content-based filtering
+03:35:15.294 | INFO    | train_content_based - Loading prepared interactions for content-based filtering
+2026-07-19 03:35:41,990 | INFO | train_content_based | Content-based filtering metrics: {'precision_at_10': 0.010666666666666668, 'recall_at_10': 0.10666666666666667, 'ndcg_at_10': 0.06469510494455301, 'n_evaluated_users': 5025}
+03:35:41.990 | INFO    | train_content_based - Content-based filtering metrics: {'precision_at_10': 0.010666666666666668, 'recall_at_10': 0.10666666666666667, 'ndcg_at_10': 0.06469510494455301, 'n_evaluated_users': 5025}
+2026-07-19 03:35:43,412 | INFO | train_content_based | MLflow run 5c3dbb28879a449ba95e07b6269309c2 logged for content_based_knn
+03:35:43.412 | INFO    | train_content_based - MLflow run 5c3dbb28879a449ba95e07b6269309c2 logged for content_based_knn
+03:35:43.432 | INFO    | Task run 'train_and_evaluate_task-a61' - Finished in state Completed()
+03:35:43.440 | INFO    | Task run 'stop_mock_api_server-5df' - Stopped mock API server (pid=24313)
+03:35:43.442 | INFO    | Task run 'stop_mock_api_server-5df' - Finished in state Completed()
+03:35:43.443 | INFO    | Flow run 'tangerine-puma' - Pipeline complete. Results: {'collaborative': {'metrics': {'precision_at_10': 0.0012935323383084577, 'recall_at_10': 0.012935323383084577, 'ndcg_at_10': 0.00921943758738431, 'n_evaluated_users': 5025}, 'mlflow_run_id': 'a69d82c852494b5c9d40b38783d4d499'}, 'content_based': {'metrics': {'precision_at_10': 0.010666666666666668, 'recall_at_10': 0.10666666666666667, 'ndcg_at_10': 0.06469510494455301, 'n_evaluated_users': 5025}, 'mlflow_run_id': '5c3dbb28879a449ba95e07b6269309c2'}}
+03:35:44.185 | INFO    | Flow run 'tangerine-puma' - Finished in state Completed()
+
+=== Final pipeline result ===
+{'collaborative': {'metrics': {'precision_at_10': 0.0012935323383084577, 'recall_at_10': 0.012935323383084577, 'ndcg_at_10': 0.00921943758738431, 'n_evaluated_users': 5025}, 'mlflow_run_id': 'a69d82c852494b5c9d40b38783d4d499'}, 'content_based': {'metrics': {'precision_at_10': 0.010666666666666668, 'recall_at_10': 0.10666666666666667, 'ndcg_at_10': 0.06469510494455301, 'n_evaluated_users': 5025}, 'mlflow_run_id': '5c3dbb28879a449ba95e07b6269309c2'}}
+03:35:44.204 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8600

@@ -1,0 +1,61 @@
+stages:
+  ingest_csv:
+    cmd: .venv-linux/bin/python ingestion/ingest_csv_sources.py
+    deps:
+      - source_data
+      - ingestion/ingest_csv_sources.py
+      - ingestion/common.py
+    outs:
+      - data/raw/olist_csv_batch
+
+  validate:
+    cmd: .venv-linux/bin/python validation/validate_data.py
+    deps:
+      - data/raw/olist_csv_batch
+      - validation/validate_data.py
+    outs:
+      - reports/02_data_quality_report.md:
+          cache: false
+      - reports/02_data_quality_summary.json:
+          cache: false
+
+  prepare:
+    cmd: .venv-linux/bin/python preparation/clean_and_eda.py
+    deps:
+      - data/raw/olist_csv_batch
+      - preparation/clean_and_eda.py
+    outs:
+      - data/processed
+      - preparation/eda_plots:
+          cache: false
+
+  build_features:
+    cmd: .venv-linux/bin/python features/build_features.py
+    deps:
+      - data/processed
+      - data/raw/product_signals_api
+      - features/build_features.py
+    outs:
+      - data/features
+      - features/recomart_features.db
+
+  train_collaborative:
+    cmd: .venv-linux/bin/python models/train_collaborative.py
+    deps:
+      - data/features/interactions.parquet
+      - models/data_split.py
+      - models/evaluate.py
+      - models/train_collaborative.py
+    outs:
+      - models/collaborative_svd_model.joblib
+
+  train_content_based:
+    cmd: .venv-linux/bin/python models/train_content_based.py
+    deps:
+      - data/features/interactions.parquet
+      - source_data
+      - models/data_split.py
+      - models/evaluate.py
+      - models/train_content_based.py
+    outs:
+      - models/content_based_model.joblib

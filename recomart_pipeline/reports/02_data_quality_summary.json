@@ -1,0 +1,17 @@
+{
+  "schema_ok": true,
+  "range_issues": {
+    "review_score_out_of_1_5_range": 0,
+    "negative_or_zero_price": 0,
+    "negative_freight_value": 0,
+    "negative_payment_value": 0
+  },
+  "referential_issues": {
+    "order_items_orphaned_order_id": 0,
+    "order_reviews_orphaned_order_id": 0,
+    "order_payments_orphaned_order_id": 0,
+    "order_items_orphaned_product_id": 0,
+    "orders_orphaned_customer_id": 0
+  },
+  "total_violations": 814
+}

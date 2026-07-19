@@ -1,0 +1,12 @@
+2026-07-19 03:22:01,002 | INFO | prepare_eda | Built interactions: 98410 reviews -> 98410 joined rows -> 111461 after dropping 0 incomplete
+2026-07-19 03:22:01,112 | INFO | prepare_eda | Encoded 72 categories, 27 states; normalized price/freight/timestamp
+2026-07-19 03:22:01,747 | INFO | prepare_eda | Sparsity: 94698 users x 32660 items, 111461 interactions, density=0.000036
+2026-07-19 03:22:02,075 | INFO | prepare_eda | Preparation complete: 111461 prepared interaction rows, 94698 users, 32660 items, density=0.000036 -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/processed/interactions_prepared.parquet
+2026-07-19 03:28:31,910 | INFO | prepare_eda | Built interactions: 98410 reviews -> 98410 joined rows -> 111461 after dropping 0 incomplete
+2026-07-19 03:28:32,026 | INFO | prepare_eda | Encoded 72 categories, 27 states; normalized price/freight/timestamp
+2026-07-19 03:28:32,667 | INFO | prepare_eda | Sparsity: 94698 users x 32660 items, 111461 interactions, density=0.000036
+2026-07-19 03:28:32,885 | INFO | prepare_eda | Preparation complete: 111461 prepared interaction rows, 94698 users, 32660 items, density=0.000036 -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/processed/interactions_prepared.parquet
+2026-07-19 03:34:24,715 | INFO | prepare_eda | Built interactions: 98410 reviews -> 98410 joined rows -> 111461 after dropping 0 incomplete
+2026-07-19 03:34:24,841 | INFO | prepare_eda | Encoded 72 categories, 27 states; normalized price/freight/timestamp
+2026-07-19 03:34:25,500 | INFO | prepare_eda | Sparsity: 94698 users x 32660 items, 111461 interactions, density=0.000036
+2026-07-19 03:34:25,688 | INFO | prepare_eda | Preparation complete: 111461 prepared interaction rows, 94698 users, 32660 items, density=0.000036 -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/processed/interactions_prepared.parquet

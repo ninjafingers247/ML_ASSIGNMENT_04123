@@ -1,0 +1,140 @@
+2026-07-19 03:19:41,536 | INFO | ingest_csv | Starting batch CSV ingestion run 20260719_031941
+2026-07-19 03:19:41,558 | INFO | ingest_csv | Ingested olist_customers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/customers/20260719_031941 (99441 rows)
+2026-07-19 03:19:41,596 | INFO | ingest_csv | Ingested olist_orders_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/orders/20260719_031941 (99441 rows)
+2026-07-19 03:19:41,632 | INFO | ingest_csv | Ingested olist_order_items_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_items/20260719_031941 (112650 rows)
+2026-07-19 03:19:41,696 | INFO | ingest_csv | Ingested olist_order_reviews_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_reviews/20260719_031941 (104719 rows)
+2026-07-19 03:19:41,713 | INFO | ingest_csv | Ingested olist_order_payments_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_payments/20260719_031941 (103886 rows)
+2026-07-19 03:19:41,720 | INFO | ingest_csv | Ingested olist_products_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/products/20260719_031941 (32951 rows)
+2026-07-19 03:19:41,721 | WARNING | ingest_csv | Attempt 1/3 failed for _copy_one: simulated transient read error from vendor feed
+2026-07-19 03:19:42,722 | INFO | ingest_csv | Ingested olist_sellers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/sellers/20260719_031941 (3095 rows)
+2026-07-19 03:19:42,723 | INFO | ingest_csv | Ingested product_category_name_translation.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/category_translation/20260719_031941 (71 rows)
+2026-07-19 03:19:42,723 | INFO | ingest_csv | Finished batch CSV ingestion run 20260719_031941: 8/8 files ingested. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/_manifests/manifest_20260719_031941.json
+2026-07-19 03:20:16,190 | INFO | ingest_api | Starting API ingestion run 20260719_032016
+2026-07-19 03:20:16,194 | INFO | ingest_api | Mock API healthy, catalog size=32951
+2026-07-19 03:20:16,277 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 003a31970fea14fffe92ac856b8a9b97
+2026-07-19 03:20:16,788 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0042f1a9a7e0edd1400c6cd0fda065f8
+2026-07-19 03:20:17,294 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0043c62d00db47eff6a6bc4cf6bfaeda
+2026-07-19 03:20:17,797 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 0043c62d00db47eff6a6bc4cf6bfaeda
+2026-07-19 03:20:18,808 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 004636c889c7c3dad6631f136b7fa082
+2026-07-19 03:20:19,311 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 004636c889c7c3dad6631f136b7fa082
+2026-07-19 03:20:20,328 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 006508eabcc19ae52ed87323124ad0e9
+2026-07-19 03:20:20,833 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 006619bbed68b000c8ba3f8725d5409e
+2026-07-19 03:20:21,339 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0067f97995b0c3a86739734dc87ee6b6
+2026-07-19 03:20:21,853 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0075c14603d80515e20908c156ceb47b
+2026-07-19 03:20:22,365 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0082684bb4a60a862baaf7a60a5845ed
+2026-07-19 03:20:22,938 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00c744ca2f3b0e76ce227b146095d3f9
+2026-07-19 03:20:23,456 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00d51a45854ebce28acda79f414388ee
+2026-07-19 03:20:24,006 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00faa46f36261af8bbf3a4d37fa4841b
+2026-07-19 03:20:24,517 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0103208eb1ea5a1a7359c0251a65e37a
+2026-07-19 03:20:25,032 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 010a3a47c14f1295796c08419f32cef6
+2026-07-19 03:20:25,553 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 011377a7487fef47fc9e73fa5f7322a6
+2026-07-19 03:20:26,061 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01175f0c6182b4410c669417d7e8268f
+2026-07-19 03:20:26,576 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01217a683550744160a91eaa46a92305
+2026-07-19 03:20:27,099 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0138b665025e0b24bfa6206d97b0f117
+2026-07-19 03:20:27,610 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 013cc658e88b36989b48b2bd5f7add59
+2026-07-19 03:20:28,133 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 014a8a503291921f7b004a5215bb3c36
+2026-07-19 03:20:28,636 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 014a8a503291921f7b004a5215bb3c36
+2026-07-19 03:20:29,643 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 014d94f219fbff1166b9cf700eee36b2
+2026-07-19 03:20:30,152 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0152cb427657428c06633fce6d721da4
+2026-07-19 03:20:30,660 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01545847403c0f1e69d76654d66be35c
+2026-07-19 03:20:31,163 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01545847403c0f1e69d76654d66be35c
+2026-07-19 03:20:32,179 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 015ec57b45a4c3efc70288eb133d623a
+2026-07-19 03:20:32,700 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0168e1b28d8e55a515928cf656eff0a4
+2026-07-19 03:20:33,207 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 016cae136d358dcdacbd7ac9f1864c09
+2026-07-19 03:20:33,713 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 016f3b29107ed03252e477b08445cec4
+2026-07-19 03:20:34,222 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0174eb125f49a617bd9c6277e5aa76a9
+2026-07-19 03:20:34,728 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0176300ac9900e260f35fbddd71c6d92
+2026-07-19 03:20:35,234 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 017692475c1c954ff597feda05131d73
+2026-07-19 03:20:35,757 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01880e9ca075037ac0520fb94c07a79a
+2026-07-19 03:20:36,267 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 018e4943e4cc9ed099f6fc1a7b65b07d
+2026-07-19 03:20:36,790 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a5038835acf17f141c7247956b72d6
+2026-07-19 03:20:37,311 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01aace6e8152ecaf9eb47678521069c6
+2026-07-19 03:20:37,829 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01b864cf36d60d972e2e29d8c5084d64
+2026-07-19 03:20:38,350 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01c9a70868bec5b748c67fcc26ce5895
+2026-07-19 03:20:38,864 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01cf56cd6138b926a4802d16fc304149
+2026-07-19 03:20:39,372 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01cf8c7364048b4b6ed0fe400667054d
+2026-07-19 03:20:39,875 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01cf8c7364048b4b6ed0fe400667054d
+2026-07-19 03:20:40,899 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01e66dc5bf4d5a186d856506a4f0fea2
+2026-07-19 03:20:41,440 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 02090f97a28b3d10d19a09f045f6df34
+2026-07-19 03:20:41,958 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 021f04378f9692f8747f926f38bb8281
+2026-07-19 03:20:42,470 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 02293621a345f7cddda16c5d9c7990e4
+2026-07-19 03:20:42,993 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 023d0e2e8457861c3badfb5fa7bcd58a
+2026-07-19 03:20:43,515 | INFO | ingest_api | Finished API ingestion run 20260719_032016: 300/300 succeeded, 0 failed. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/product_signals_api/_manifests/manifest_20260719_032016.json
+2026-07-19 03:28:25,614 | INFO | ingest_csv | Starting batch CSV ingestion run 20260719_032825
+2026-07-19 03:28:25,635 | INFO | ingest_csv | Ingested olist_customers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/customers/20260719_032825 (99441 rows)
+2026-07-19 03:28:25,671 | INFO | ingest_csv | Ingested olist_orders_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/orders/20260719_032825 (99441 rows)
+2026-07-19 03:28:25,703 | INFO | ingest_csv | Ingested olist_order_items_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_items/20260719_032825 (112650 rows)
+2026-07-19 03:28:25,761 | INFO | ingest_csv | Ingested olist_order_reviews_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_reviews/20260719_032825 (104719 rows)
+2026-07-19 03:28:25,777 | INFO | ingest_csv | Ingested olist_order_payments_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_payments/20260719_032825 (103886 rows)
+2026-07-19 03:28:25,785 | INFO | ingest_csv | Ingested olist_products_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/products/20260719_032825 (32951 rows)
+2026-07-19 03:28:25,785 | WARNING | ingest_csv | Attempt 1/3 failed for _copy_one: simulated transient read error from vendor feed
+2026-07-19 03:28:26,786 | INFO | ingest_csv | Ingested olist_sellers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/sellers/20260719_032825 (3095 rows)
+2026-07-19 03:28:26,787 | INFO | ingest_csv | Ingested product_category_name_translation.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/category_translation/20260719_032825 (71 rows)
+2026-07-19 03:28:26,787 | INFO | ingest_csv | Finished batch CSV ingestion run 20260719_032825: 8/8 files ingested. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/_manifests/manifest_20260719_032825.json
+2026-07-19 03:33:49,941 | INFO | ingest_csv | Starting batch CSV ingestion run 20260719_033349
+2026-07-19 03:33:49,964 | INFO | ingest_csv | Ingested olist_customers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/customers/20260719_033349 (99441 rows)
+2026-07-19 03:33:50,003 | INFO | ingest_csv | Ingested olist_orders_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/orders/20260719_033349 (99441 rows)
+2026-07-19 03:33:50,037 | INFO | ingest_csv | Ingested olist_order_items_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_items/20260719_033349 (112650 rows)
+2026-07-19 03:33:50,092 | INFO | ingest_csv | Ingested olist_order_reviews_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_reviews/20260719_033349 (104719 rows)
+2026-07-19 03:33:50,107 | INFO | ingest_csv | Ingested olist_order_payments_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/order_payments/20260719_033349 (103886 rows)
+2026-07-19 03:33:50,113 | INFO | ingest_csv | Ingested olist_products_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/products/20260719_033349 (32951 rows)
+2026-07-19 03:33:50,114 | WARNING | ingest_csv | Attempt 1/3 failed for _copy_one: simulated transient read error from vendor feed
+2026-07-19 03:33:51,115 | INFO | ingest_csv | Ingested olist_sellers_dataset.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/sellers/20260719_033349 (3095 rows)
+2026-07-19 03:33:51,116 | INFO | ingest_csv | Ingested product_category_name_translation.csv -> /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/category_translation/20260719_033349 (71 rows)
+2026-07-19 03:33:51,116 | INFO | ingest_csv | Finished batch CSV ingestion run 20260719_033349: 8/8 files ingested. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/olist_csv_batch/_manifests/manifest_20260719_033349.json
+2026-07-19 03:33:51,123 | INFO | ingest_api | Starting API ingestion run 20260719_033351
+2026-07-19 03:33:51,128 | INFO | ingest_api | Mock API healthy, catalog size=32951
+2026-07-19 03:33:51,165 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 001795ec6f1b187d37335e1c4704762e
+2026-07-19 03:33:51,675 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 001c5d71ac6ad696d22315953758fa04
+2026-07-19 03:33:52,191 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 002959d7a0b0990fe2d69988affcbc80
+2026-07-19 03:33:52,704 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 002ec297b1b00fb9dde7ee6ac24b6771
+2026-07-19 03:33:53,216 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0036bb031e69d915cd384d1b3838b5d3
+2026-07-19 03:33:53,719 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 0036bb031e69d915cd384d1b3838b5d3
+2026-07-19 03:33:54,733 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 003dbcabcf8e3231de657c7d9f9a5eba
+2026-07-19 03:33:55,244 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0043d1a25ef08fb6f41b8fa6f91742ab
+2026-07-19 03:33:55,765 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00636f9286f69c9f1bdabe76e670fb50
+2026-07-19 03:33:56,273 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 006619bbed68b000c8ba3f8725d5409e
+2026-07-19 03:33:56,778 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0067f97995b0c3a86739734dc87ee6b6
+2026-07-19 03:33:57,296 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0081787b18cce4acc2d1adec4520d7ba
+2026-07-19 03:33:57,814 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 008cff0e5792219fae03e570f980b330
+2026-07-19 03:33:58,327 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0092a9e1c8a471753ed7ffa7eef5086e
+2026-07-19 03:33:58,853 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00b264091d1c8df03976c3f3b176b35c
+2026-07-19 03:33:59,397 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00dc8a1b2de45a7fca5921544e5f351d
+2026-07-19 03:33:59,913 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00e2784f846618842151d40ec730ece0
+2026-07-19 03:34:00,419 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00e32638060f6356e6f00749dc466b5c
+2026-07-19 03:34:00,943 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00f8c37377b038c9c791128d2f928111
+2026-07-19 03:34:01,449 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00faa46f36261af8bbf3a4d37fa4841b
+2026-07-19 03:34:01,955 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 00fd6afd95fe066db8433832180a5369
+2026-07-19 03:34:02,465 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0103208eb1ea5a1a7359c0251a65e37a
+2026-07-19 03:34:02,968 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 0103208eb1ea5a1a7359c0251a65e37a
+2026-07-19 03:34:03,978 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01078a94cb29913dfda1a962fd4e3400
+2026-07-19 03:34:04,489 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 010a3a47c14f1295796c08419f32cef6
+2026-07-19 03:34:05,005 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0110986ff84d644fee920efb18577292
+2026-07-19 03:34:05,528 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 011be89e68e286ac07f51c22ecbb04aa
+2026-07-19 03:34:06,044 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 012dd0e1c1f14325ee35f06748329355
+2026-07-19 03:34:06,577 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0141015d2469c1c5f9d7d377d1cdb44a
+2026-07-19 03:34:07,098 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01503fbd89d42654631476b292b8bc8c
+2026-07-19 03:34:07,610 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 015527ec9502daa03dfd0e22ef1d1288
+2026-07-19 03:34:08,128 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 015f06d7b83e5a6f7d1765fb5d8bdfa6
+2026-07-19 03:34:08,634 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01604238fbc11ce379e537a76b26bc94
+2026-07-19 03:34:09,159 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 016f3b29107ed03252e477b08445cec4
+2026-07-19 03:34:09,671 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 0176300ac9900e260f35fbddd71c6d92
+2026-07-19 03:34:10,205 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 018ca97302e4293050cc41413194bb19
+2026-07-19 03:34:10,713 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 019003324f0a201dd2c8962beaf94b6d
+2026-07-19 03:34:11,227 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 019d8b8866a5555ac955b45ffd35e039
+2026-07-19 03:34:11,731 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 019d8b8866a5555ac955b45ffd35e039
+2026-07-19 03:34:12,737 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a0f7d0d081d619be810e512be45f97
+2026-07-19 03:34:13,245 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a2ad2b54cd734f78cb817da7752d8b
+2026-07-19 03:34:13,755 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01a52711e989a817ab8100ddcf8d2940
+2026-07-19 03:34:14,278 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01b154ceb5457897eb28b9e549f28219
+2026-07-19 03:34:14,781 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01b154ceb5457897eb28b9e549f28219
+2026-07-19 03:34:15,805 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01c3486b189d16ad1b35270d5881e5a4
+2026-07-19 03:34:16,310 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01c3486b189d16ad1b35270d5881e5a4
+2026-07-19 03:34:17,322 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01c9a70868bec5b748c67fcc26ce5895
+2026-07-19 03:34:17,825 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 01c9a70868bec5b748c67fcc26ce5895
+2026-07-19 03:34:18,847 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01cfc3d9c29504c2d370933e53f002b4
+2026-07-19 03:34:19,368 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 01ea47d0dff23faa8d07ba3f353d2af0
+2026-07-19 03:34:19,904 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 020a80cb704bf65f38761fcedf2af192
+2026-07-19 03:34:20,417 | WARNING | ingest_api | Attempt 1/4 failed for _fetch_product_signals: server error 503 for 021d39ee869e87d5288f4e731df4a90e
+2026-07-19 03:34:20,921 | WARNING | ingest_api | Attempt 2/4 failed for _fetch_product_signals: server error 503 for 021d39ee869e87d5288f4e731df4a90e
+2026-07-19 03:34:21,970 | INFO | ingest_api | Finished API ingestion run 20260719_033351: 300/300 succeeded, 0 failed. Manifest: /home/user/ML_ASSIGNMENT_04123/recomart_pipeline/data/raw/product_signals_api/_manifests/manifest_20260719_033351.json
