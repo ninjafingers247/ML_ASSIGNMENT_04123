@@ -1,1 +1,12 @@
 /source_data
+.venv-linux/
+mlruns/
+mlartifacts/
+feature_store/feature_repo/data/
+dvc_local_remote/
+.dvc/cache/
+.dvc/tmp/
+__pycache__/
+*.pyc
+*.db
+.ipynb_checkpoints/
